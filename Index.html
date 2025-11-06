@@ -15,7 +15,6 @@
       --accent-2: #00b4ff;
       --radius: 12px;
       --maxw:1100px;
-      --glass: rgba(2,6,23,0.03);
       --shadow: 0 10px 30px rgba(12,20,40,0.06);
     }
     *{box-sizing:border-box}
@@ -29,25 +28,16 @@
     nav a{margin-left:18px;color:var(--muted);text-decoration:none;font-weight:600}
     .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:start;margin-top:26px}
     .card{background:var(--card);border-radius:12px;padding:18px;box-shadow:var(--shadow);border:1px solid rgba(15,23,36,0.04)}
-    .cta{display:flex;gap:12px;margin-top:14px}
     .btn{background:linear-gradient(90deg,var(--accent),var(--accent-2));border:none;color:white;padding:12px 16px;border-radius:10px;font-weight:700;cursor:pointer}
-    .btn.ghost{background:transparent;border:1px solid rgba(6,49,140,0.08);color:var(--accent);font-weight:700}
-    label{display:block;font-size:13px;color:var(--muted);margin-bottom:8px}
-    input,textarea{width:100%;padding:12px;border-radius:10px;border:1px solid rgba(15,23,36,0.06);background:#fff;font-size:14px;color:#071128;outline:none}
-    textarea{min-height:140px;resize:vertical}
+    .btn.ghost{background:transparent;border:1px solid rgba(6,49,140,0.08);color:var(--accent)}
     .feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
     .feature{padding:14px;border-radius:10px;background:linear-gradient(180deg,#fff,#fbfdff);border:1px solid rgba(2,6,23,0.03);text-align:center}
-    .feature h4{margin:6px 0 0;font-size:15px}
-    .pro-box{margin-top:12px;padding:12px;border-radius:10px;background:linear-gradient(90deg,rgba(0,102,255,0.05),rgba(0,180,255,0.03));border:1px solid rgba(0,102,255,0.08);display:flex;justify-content:space-between;align-items:center}
     .small{font-size:13px;color:var(--muted)}
-    .result{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', monospace;background:#f3f7ff;padding:12px;border-radius:8px;color:#02214b;min-height:160px;white-space:pre-wrap}
+    .result{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,'Roboto Mono',monospace;background:#f3f7ff;padding:12px;border-radius:8px;color:#02214b;min-height:160px;white-space:pre-wrap}
     .meta{display:flex;align-items:center;gap:10px;margin-top:10px}
     .chip{background:rgba(2,6,23,0.04);padding:6px 10px;border-radius:999px;font-weight:700;color:#032a63;font-size:13px}
-    .testimonials{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
     footer{margin-top:28px;padding:18px 8px;color:var(--muted);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
-    @media(max-width:980px){.hero{grid-template-columns:1fr}.feature-grid{grid-template-columns:repeat(2,1fr)}.testimonials{grid-template-columns:1fr}}
-    /* subtle animation */
-    .logo{transition:transform .2s ease} .logo:hover{transform:translateY(-3px)}
+    @media(max-width:980px){.hero{grid-template-columns:1fr}.feature-grid{grid-template-columns:repeat(2,1fr)}}
   </style>
 </head>
 <body>
@@ -70,140 +60,75 @@
     <main class="hero">
       <section>
         <div class="card">
-          <h2 style="margin:0 0 6px">Build an interview‑ready resume in minutes</h2>
-          <p class="small">AI-powered resume rewriting, instant match scoring for any job description, interview prep and skill recommendations.</p>
+          <h2>Build an interview-ready resume in minutes</h2>
+          <p class="small">AI-powered resume rewriting, instant match scoring for any job, and skill recommendations.</p>
           <div style="display:flex;gap:12px;margin-top:16px;align-items:center">
-            <button class="btn" onclick="document.getElementById('resume').focus()">Try Free Resume Rewrite</button>
-            <button class="btn ghost" onclick="alert('Pro flow: ₹199 — integrate payment link')">Get Pro Resume — ₹199</button>
+            <button class="btn">Try Free Resume Rewrite</button>
+            <button class="btn ghost">Get Pro Resume — ₹199</button>
           </div>
 
           <div style="margin-top:18px" id="how">
-            <h3 style="margin:0 0 8px">How it works</h3>
+            <h3>How it works</h3>
             <div class="feature-grid" id="features">
               <div class="feature"><strong>1. Paste Resume</strong><div class="small">Or upload a .txt file</div></div>
-              <div class="feature"><strong>2. AI Rewrite</strong><div class="small">Actionable, ATS‑friendly</div></div>
+              <div class="feature"><strong>2. AI Rewrite</strong><div class="small">Actionable, ATS-friendly</div></div>
               <div class="feature"><strong>3. Apply Confidently</strong><div class="small">Optimized resume + interview questions</div></div>
             </div>
           </div>
 
-          <div class="pro-box" style="margin-top:16px">
-            <div>
-              <strong>Career Copilot — ₹199/month</strong>
-              <div class="small">Unlimited rewrites, mock interviews & priority support</div>
+          <div style="margin-top:20px;">
+            <h3>Submit your resume for free AI feedback</h3>
+            <p class="small">Fill the form below to upload your resume and get AI-powered analysis instantly.</p>
+            <div style="background:#fff;border-radius:12px;padding:10px;box-shadow:0 8px 24px rgba(10,20,40,0.06);border:1px solid rgba(10,20,40,0.04)">
+              <iframe class="airtable-embed" src="https://airtable.com/embed/appSaA2y6xQMLKmQj/shrTHGjYgxnpyl6Ub" frameborder="0" onmousewheel="" width="100%" height="533" style="background:transparent;border:0;"></iframe>
             </div>
-            <div><button class="btn">Start Trial</button></div>
-          </div>
-
-          <div style="margin-top:16px">
-            <h4 style="margin:0 0 8px">Try it now</h4>
-            <label for="name">Full name</label>
-            <input id="name" placeholder="e.g. Rahul Sharma">
-            <label style="margin-top:10px">Email</label>
-            <input id="email" placeholder="you@email.com">
-            <label style="margin-top:10px">Paste resume (or upload .txt)</label>
-            <textarea id="resume" placeholder="Paste your resume text here..."></textarea>
-            <label style="margin-top:10px">(Optional) Paste Job Description</label>
-            <textarea id="jd" placeholder="Paste the JD to check match..."></textarea>
-
-            <div style="margin-top:12px;display:flex;gap:10px;align-items:center">
-              <button class="btn" id="previewBtn">Generate Preview</button>
-              <button class="btn ghost" id="downloadBtn">Download Preview</button>
-              <div style="margin-left:auto" class="small">Ctrl+Enter to run</div>
-            </div>
+            <div style="margin-top:10px;color:#6b7280;font-size:13px;">We respect your privacy. Your data is never shared.</div>
           </div>
         </div>
 
         <div class="card" style="margin-top:14px">
-          <h3 style="margin:0 0 8px">Before → After (example)</h3>
+          <h3>Before → After (example)</h3>
           <div style="display:flex;gap:10px;align-items:stretch">
-            <div style="flex:1;padding:10px;background:#fbfdff;border-radius:8px;border:1px solid rgba(2,6,23,0.02)">
-              <div style="font-size:13px;color:var(--muted)">Before</div>
-              <pre style="font-family:inherit;background:transparent;margin:8px 0;color:#25406a">Worked on website features, improved load time.</pre>
+            <div style="flex:1;padding:10px;background:#fbfdff;border-radius:8px;">
+              <div class="small">Before</div>
+              <pre>Worked on website features, improved load time.</pre>
             </div>
-            <div style="flex:1;padding:10px;background:#fff;border-radius:8px;border:1px solid rgba(2,6,23,0.03)">
-              <div style="font-size:13px;color:var(--muted)">After</div>
-              <pre style="font-family:inherit;background:transparent;margin:8px 0;color:#02214b">Led front-end rework that reduced page load time by 40% and improved conversion.</pre>
+            <div style="flex:1;padding:10px;background:#fff;border-radius:8px;">
+              <div class="small">After</div>
+              <pre>Led front-end rework that reduced page load time by 40% and improved conversion.</pre>
             </div>
           </div>
         </div>
-
       </section>
 
       <aside style="width:420px">
         <div class="card">
-          <h3 style="margin:0 0 8px">Preview Result</h3>
-          <div id="result" class="result">Your AI preview will appear here after you click "Generate Preview".</div>
+          <h3>Preview Result</h3>
+          <div id="result" class="result">Your AI preview will appear here after analysis.</div>
           <div class="meta"><div class="chip" id="score">Score —</div><div class="chip" id="topSkills">Skills —</div></div>
-          <div style="margin-top:12px" class="small">Recommended courses & affiliate links will appear here.</div>
         </div>
 
         <div class="card" style="margin-top:12px">
-          <h4 style="margin:0 0 8px">What jobseekers get</h4>
+          <h4>What jobseekers get</h4>
           <ul class="small">
-            <li>ATS‑friendly resume rewrite (preview)</li>
+            <li>ATS-friendly resume rewrite (preview)</li>
             <li>Match % for any JD</li>
-            <li>Interview questions & skill suggestions</li>
+            <li>Interview prep & skill suggestions</li>
           </ul>
         </div>
 
         <div class="card" style="margin-top:12px">
-          <h4 style="margin:0 0 8px">Testimonials</h4>
-          <div class="testimonials">
-            <div style="padding:10px;border-radius:8px;background:#fbfdff">"Rewrote my resume — got interviews in 5 days." — Priya</div>
-            <div style="padding:10px;border-radius:8px;background:#fbfdff">"Easy, fast and surprisingly accurate." — Sameer</div>
-          </div>
+          <h4>Testimonials</h4>
+          <div style="padding:10px;background:#fbfdff;border-radius:8px;margin-bottom:8px;">"Got shortlisted in 5 days after rewrite." — Priya</div>
+          <div style="padding:10px;background:#fbfdff;border-radius:8px;">"Accurate and super easy to use." — Sameer</div>
         </div>
-
       </aside>
     </main>
 
     <footer>
-      <div>© HireEdgeAI — Built with ChatGPT • Privacy-first • Data used with consent</div>
+      <div>© HireEdgeAI — Built with ChatGPT • Privacy-first</div>
       <div class="small">Need help? <a href="mailto:hireedgeai@example.com">hireedgeai@example.com</a></div>
     </footer>
   </div>
-
-  <script>
-    // Client-side demo AI (more refined)
-    function sanitize(t){return String(t||'').trim()}
-    function simpleRewrite(text){
-      const lines = text.split(/\\n+/).map(l=>l.trim()).filter(Boolean)
-      const bullets = lines.slice(0,6).map(l=>{
-        let s = l.replace(/\\bresponsible for\\b/ig,'Led').replace(/\\bworked on\\b/ig,'Developed');
-        s = s.replace(/\\bparticipated in\\b/ig,'Contributed to');
-        return '- '+s;
-      })
-      const skills = []
-      if(/javascript|react|node|python|sql/i.test(text)) skills.push('Programming (JS/Python)')
-      if(/excel|power bi|tableau|sql/i.test(text)) skills.push('Data Analysis')
-      if(skills.length===0) skills.push('Communication')
-      return {summary: 'Experienced professional focused on measurable impact and growth.', bullets, skills}
-    }
-
-    function computeScore(resume,jd){
-      const r=sanitize(resume).toLowerCase(); const j=sanitize(jd).toLowerCase();
-      if(!r) return 0; if(!j) return 70;
-      const jw=j.split(/[^a-z0-9]+/).filter(Boolean)
-      let matches=0; jw.forEach(w=>{ if(w.length>3 && r.indexOf(w)!==-1) matches++; })
-      return Math.min(98, Math.round(45 + (matches/jw.length)*50))
-    }
-
-    document.getElementById('previewBtn').addEventListener('click', ()=>{
-      const resume=document.getElementById('resume').value; const jd=document.getElementById('jd').value;
-      if(!resume.trim()){ alert('Please paste your resume text.'); return; }
-      const ai=simpleRewrite(resume); const score=computeScore(resume,jd);
-      document.getElementById('result').innerText = ai.summary + '\\n\\n' + ai.bullets.join('\\n') + '\\n\\nSuggested skill: ' + ai.skills.join(', ');
-      document.getElementById('score').innerText = 'Score ' + score + '/100';
-      document.getElementById('topSkills').innerText = 'Skills ' + ai.skills.join(', ');
-    })
-
-    document.getElementById('downloadBtn').addEventListener('click', ()=>{
-      const txt = document.getElementById('result').innerText || 'No preview yet.';
-      const blob = new Blob([txt],{type:'text/plain'}); const url = URL.createObjectURL(blob);
-      const a=document.createElement('a'); a.href=url; a.download='HireEdgeAI-Preview.txt'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
-    })
-
-    document.addEventListener('keydown', function(e){ if(e.ctrlKey && e.key==='Enter') document.getElementById('previewBtn').click(); })
-  </script>
 </body>
 </html>
