@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Thank you — HireEdgeAI</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0ZQCTDMQC9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-0ZQCTDMQC9');
+
+    // Fire the GA4 event for resume submission
+    gtag('event', 'resume_form_submit', {
+      event_category: 'form_submission',
+      event_label: 'Airtable Resume Form Redirect'
+    });
+  </script>
+
+  <style>
+    body {
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: #f6f8fb;
+    }
+    .card {
+      background: #fff;
+      padding: 28px;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(10,20,40,0.06);
+      max-width: 720px;
+      text-align: center;
+    }
+    h1 { margin: 0 0 6px; }
+    p { color: #666; margin: 0 0 12px; }
+    a.btn {
+      display: inline-block;
+      padding: 10px 14px;
+      border-radius: 8px;
+      background: #0066ff;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>🎉 Resume Submitted Successfully!</h1>
+    <p>We’ve received your resume. You’ll hear from HireEdgeAI soon.</p>
+    <a href="/" class="btn">Return to Homepage</a>
+    <p style="margin-top:12px;color:#999;font-size:13px;">
+      If you reached here automatically, your submission was successful.
+    </p>
+  </div>
+</body>
+</html>
