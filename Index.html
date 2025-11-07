@@ -6,38 +6,9 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>HireEdgeAI — Smarter Resumes. Faster Hiring.</title>
   <meta name="description" content="AI Resume Builder & Interview Coach — Optimize your resume, check match with any job, and prepare for interviews instantly." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- SEO, Social & Structured Data -->
-  <link rel="icon" href="/favicon.ico" />
-  <link rel="canonical" href="https://merry-tulumba-4f87a3.netlify.app/" />
-  <meta name="keywords" content="AI resume builder, resume rewrite, interview prep, ATS resume, HireEdgeAI, jobseekers, resume scoring">
-  <meta name="robots" content="index, follow">
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="HireEdgeAI — Smarter Resumes. Faster Hiring." />
-  <meta property="og:description" content="AI Resume Builder & Interview Coach — Build an interview-ready resume in minutes. Optimize your resume, check match with any job, and get interview prep tips." />
-  <meta property="og:image" content="https://merry-tulumba-4f87a3.netlify.app/logo.png" />
-  <meta property="og:url" content="https://merry-tulumba-4f87a3.netlify.app/" />
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="HireEdgeAI — Smarter Resumes. Faster Hiring." />
-  <meta name="twitter:description" content="Build AI-optimized resumes instantly. Match with any job and prepare for interviews — completely free." />
-  <meta name="twitter:image" content="https://merry-tulumba-4f87a3.netlify.app/logo.png" />
-
-  <!-- JSON-LD -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Organization",
-    "name":"HireEdgeAI",
-    "url":"https://merry-tulumba-4f87a3.netlify.app/",
-    "logo":"https://merry-tulumba-4f87a3.netlify.app/logo.png"
-  }
-  </script>
-
-  <!-- Google tag (gtag.js) -->
+  <!-- Google Analytics (GA4) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-0ZQCTDMQC9"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -45,8 +16,6 @@
     gtag('js', new Date());
     gtag('config', 'G-0ZQCTDMQC9');
   </script>
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root{
@@ -105,19 +74,27 @@
         <div class="card">
           <h2>Build an interview-ready resume in minutes</h2>
           <p class="small">AI-powered resume rewriting, instant match scoring for any job, and skill recommendations.</p>
+
           <div style="display:flex;gap:12px;margin-top:16px;align-items:center">
-            <button class="btn">Try Free Resume Rewrite</button>
-            <button class="btn ghost">Get Pro Resume — ₹199</button>
+            <button id="tryFree" class="btn">Try Free Resume Rewrite</button>
+            <button id="getPro" class="btn ghost">Get Pro Resume — ₹199</button>
           </div>
 
-          <div style="margin-top:18px" id="how">
-            <h3>How it works</h3>
-            <div class="feature-grid" id="features">
-              <div class="feature"><strong>1. Paste Resume</strong><div class="small">Or upload a .txt file</div></div>
-              <div class="feature"><strong>2. AI Rewrite</strong><div class="small">Actionable, ATS-friendly</div></div>
-              <div class="feature"><strong>3. Apply Confidently</strong><div class="small">Optimized resume + interview questions</div></div>
-            </div>
-          </div>
+          <script>
+            document.getElementById('tryFree').addEventListener('click', function(){
+              gtag('event', 'click_try_free_resume', {
+                event_category: 'button_click',
+                event_label: 'Try Free Resume Rewrite'
+              });
+            });
+
+            document.getElementById('getPro').addEventListener('click', function(){
+              gtag('event', 'click_get_pro_resume', {
+                event_category: 'button_click',
+                event_label: 'Get Pro Resume'
+              });
+            });
+          </script>
 
           <div style="margin-top:20px;">
             <h3>Submit your resume for free AI feedback</h3>
@@ -125,51 +102,13 @@
             <div style="background:#fff;border-radius:12px;padding:10px;box-shadow:0 8px 24px rgba(10,20,40,0.06);border:1px solid rgba(10,20,40,0.04)">
               <iframe class="airtable-embed" src="https://airtable.com/embed/appSaA2y6xQMLKmQj/shrTHGjYgxnpyl6Ub" frameborder="0" width="100%" height="533" style="background:transparent;border:0;"></iframe>
             </div>
-            <div style="margin-top:10px;color:#6b7280;font-size:13px;">We respect your privacy. Your data is never shared.</div>
-          </div>
-        </div>
-
-        <div class="card" style="margin-top:14px">
-          <h3>Before → After (example)</h3>
-          <div style="display:flex;gap:10px;align-items:stretch">
-            <div style="flex:1;padding:10px;background:#fbfdff;border-radius:8px;">
-              <div class="small">Before</div>
-              <pre>Worked on website features, improved load time.</pre>
-            </div>
-            <div style="flex:1;padding:10px;background:#fff;border-radius:8px;">
-              <div class="small">After</div>
-              <pre>Led front-end rework that reduced page load time by 40% and improved conversion.</pre>
-            </div>
           </div>
         </div>
       </section>
-
-      <aside style="width:420px">
-        <div class="card">
-          <h3>Preview Result</h3>
-          <div id="result" class="result">Your AI preview will appear here after analysis.</div>
-          <div class="meta"><div class="chip" id="score">Score —</div><div class="chip" id="topSkills">Skills —</div></div>
-        </div>
-
-        <div class="card" style="margin-top:12px">
-          <h4>What jobseekers get</h4>
-          <ul class="small">
-            <li>ATS-friendly resume rewrite (preview)</li>
-            <li>Match % for any JD</li>
-            <li>Interview prep & skill suggestions</li>
-          </ul>
-        </div>
-
-        <div class="card" style="margin-top:12px">
-          <h4>Testimonials</h4>
-          <div style="padding:10px;background:#fbfdff;border-radius:8px;margin-bottom:8px;">"Got shortlisted in 5 days after rewrite." — Priya</div>
-          <div style="padding:10px;background:#fbfdff;border-radius:8px;">"Accurate and super easy to use." — Sameer</div>
-        </div>
-      </aside>
     </main>
 
     <footer>
-      <div>© HireEdgeAI — Built with ChatGPT • Privacy-first • We use Google Analytics to improve this site. No personal data is shared.</div>
+      <div>© HireEdgeAI — Built with ChatGPT • Privacy-first</div>
       <div class="small">Need help? <a href="mailto:hireedgeai@example.com">hireedgeai@example.com</a></div>
     </footer>
   </div>
