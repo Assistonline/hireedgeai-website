@@ -1,64 +1,77 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Thank you — HireEdgeAI</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You — HireEdgeAI</title>
 
-  <!-- Google tag (gtag.js) -->
+  <!-- Google Tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-0ZQCTDMQC9"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-0ZQCTDMQC9');
 
-    // Fire the GA4 event for resume submission
-    gtag('event', 'resume_form_submit', {
-      event_category: 'form_submission',
-      event_label: 'Airtable Resume Form Redirect'
+    // Initialize GA4 with your Measurement ID
+    gtag('config', 'G-0ZQCTDMQC9', { 'send_page_view': true });
+
+    // Fire a GA4 event when the thank-you page loads
+    window.addEventListener('load', function() {
+      gtag('event', 'resume_form_submit', {
+        event_category: 'form_submission',
+        event_label: 'Airtable Resume Form Redirect',
+        value: 1
+      });
+      console.log('GA4 event: resume_form_submit fired');
     });
   </script>
 
   <style>
     body {
-      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+      background: #f5f7fb;
       margin: 0;
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       height: 100vh;
-      background: #f6f8fb;
     }
-    .card {
+    .container {
       background: #fff;
-      padding: 28px;
-      border-radius: 12px;
-      box-shadow: 0 8px 24px rgba(10,20,40,0.06);
-      max-width: 720px;
+      padding: 40px 60px;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
       text-align: center;
+      max-width: 480px;
     }
-    h1 { margin: 0 0 6px; }
-    p { color: #666; margin: 0 0 12px; }
-    a.btn {
-      display: inline-block;
-      padding: 10px 14px;
-      border-radius: 8px;
-      background: #0066ff;
+    h1 {
+      color: #111827;
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    p {
+      color: #6b7280;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+    a.button {
+      background: #2563eb;
       color: #fff;
       text-decoration: none;
+      padding: 10px 18px;
+      border-radius: 8px;
       font-weight: 600;
+    }
+    a.button:hover {
+      background: #1d4ed8;
     }
   </style>
 </head>
 <body>
-  <div class="card">
+  <div class="container">
     <h1>🎉 Resume Submitted Successfully!</h1>
-    <p>We’ve received your resume. You’ll hear from HireEdgeAI soon.</p>
-    <a href="/" class="btn">Return to Homepage</a>
-    <p style="margin-top:12px;color:#999;font-size:13px;">
-      If you reached here automatically, your submission was successful.
-    </p>
+    <p>Thank you for submitting your resume. Our team will review it and get back to you soon.</p>
+    <a href="/" class="button">Return to Homepage</a>
   </div>
 </body>
 </html>
